@@ -1,0 +1,10 @@
+.watch-block{
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    max-width: 1000px;
+    padding: 50px;
+    background-color: rgba(60, 60, 63, 0.76);
+    border-radius: 50px;
+}

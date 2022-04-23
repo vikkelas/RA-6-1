@@ -1,0 +1,31 @@
+.watch-form{
+    display: flex;
+    align-items: center;
+}
+.watch-form__label{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    text-transform: uppercase;
+}
+.watch-form__label>span{
+ padding: 5px 0;
+}
+.watch-form__label>input, select{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+.watch-form>button{
+    align-self: flex-end;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: aliceblue;
+    max-width: 100px;
+
+}

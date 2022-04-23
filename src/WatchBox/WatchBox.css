@@ -1,0 +1,5 @@
+.watch-box{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}

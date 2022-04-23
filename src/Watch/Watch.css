@@ -1,0 +1,125 @@
+.watch{
+    padding: 10px;
+}
+
+.watch-title{
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    padding: 5px 0;
+    font-size: 14px;
+}
+
+.circle{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    position: relative;
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ffffff;
+    background-color: black;
+
+}
+
+.circle::after{
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.second{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*transform: rotateZ(0deg);*/
+    height: 100%;
+}
+.second-none{
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 45%;
+}
+
+.second-red{
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 45%;
+    border: 1px solid red;
+}
+
+.minutes{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: rotateZ(90deg);
+    height: 100%;
+}
+.minutes-none{
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 45%;
+}
+
+.minutes-black{
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 45%;
+    width: 2px;
+    border: 1px solid #faf7f7;
+    background-color: #282c34;
+}
+
+.hours{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: rotateZ(90deg);
+    height: 100%;
+}
+.hours-none{
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 35%;
+}
+
+.hours-black{
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 35%;
+    width: 2px;
+    border: 1px solid #eeeded;
+    background-color: #282c34;
+}
+.watch__delete{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-image: url(../assets/cancel.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
