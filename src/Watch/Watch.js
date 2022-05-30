@@ -12,9 +12,18 @@ class Watch extends Component {
         }
         this.interval = null;
         this.time = props.time;
+        this.calc = {
+            seconds: 0,
+            minutes: 0,
+            hours: 0
+        }
     }
 
-
+    calculation(){
+            this.calc.seconds=this.state.seconds*6;
+            this.calc.minutes= this.state.minutes*6;
+            this.calc.hours= this.state.hours*30+this.state.minutes*0.5;
+    }
     getTime(){
         const utc = moment.utc().utcOffset(this.time.timeZone*60).format('hh:mm:ss').split(':');
         this.setState({
@@ -22,6 +31,7 @@ class Watch extends Component {
             minutes: utc[1],
             seconds: utc[2]
         })
+        this.calculation();
     }
 
     deleteWatch = ()=>{
@@ -30,7 +40,8 @@ class Watch extends Component {
 
 
     componentDidMount() {
-        this.interval=setInterval(()=>this.getTime(),1000);
+        this.getTime();
+        this.interval=setInterval(()=>this.getTime(),1);
     }
 
     componentWillUnmount() {
@@ -45,15 +56,15 @@ class Watch extends Component {
                     <div className="watch__delete" onClick={this.deleteWatch}/>
                 </div>
                 <div className="circle">
-                    <div style={{transform: `rotateZ(${this.state.seconds*6}deg)`}} className="second">
+                    <div style={{transform: `rotateZ(${this.calc.seconds}deg)`}} className="second">
                         <div className="second-red"/>
                         <div className="second-none"/>
                     </div>
-                    <div style={{transform: `rotateZ(${this.state.minutes*6}deg)`}} className="minutes">
+                    <div style={{transform: `rotateZ(${this.calc.minutes}deg)`}} className="minutes">
                         <div className="minutes-black"/>
                         <div className="minutes-none"/>
                     </div>
-                    <div style={{transform: `rotateZ(${this.state.hours*30+this.state.minutes*0.5}deg)`}} className="hours">
+                    <div style={{transform: `rotateZ(${this.calc.hours}deg)`}} className="hours">
                         <div className="hours-black"/>
                         <div className="hours-none"/>
                     </div>
