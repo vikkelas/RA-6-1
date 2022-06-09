@@ -11,7 +11,6 @@ class Watch extends Component {
             seconds: 0,
         }
         this.interval = null;
-        this.time = props.time;
         this.calc = {
             seconds: 0,
             minutes: 0,
@@ -25,7 +24,7 @@ class Watch extends Component {
             this.calc.hours= this.state.hours*30+this.state.minutes*0.5;
     }
     getTime(){
-        const utc = moment.utc().utcOffset(this.time.timeZone*60).format('hh:mm:ss').split(':');
+        const utc = moment.utc().utcOffset(this.props.time.timeZone*60).format('hh:mm:ss').split(':');
         this.setState({
             hours: utc[0],
             minutes: utc[1],
@@ -41,7 +40,7 @@ class Watch extends Component {
 
     componentDidMount() {
         this.getTime();
-        this.interval=setInterval(()=>this.getTime(),1);
+        this.interval=setInterval(()=>this.getTime(),1000);
     }
 
     componentWillUnmount() {
@@ -52,7 +51,7 @@ class Watch extends Component {
         return (
             <div className='watch'>
                 <div className="watch-title">
-                    <div className="name">{this.time.name}</div>
+                    <div className="name">{this.props.time.name}</div>
                     <div className="watch__delete" onClick={this.deleteWatch}/>
                 </div>
                 <div className="circle">
